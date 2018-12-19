@@ -18,5 +18,9 @@ public class CalculatorTest {
 		testee = new Calculator();
 		assertTrue(testee.summe(10, 25) == 35);
 	}
-
+	@Test
+	public void testSubstractionZweiPositiveIsOk() {
+		testee = new Calculator();
+		assertTrue(testee.substraktion(25, 10) == 15);
+	}
 }
