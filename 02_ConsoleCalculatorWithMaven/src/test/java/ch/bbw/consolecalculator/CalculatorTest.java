@@ -3,7 +3,7 @@ package ch.bbw.consolecalculator;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
+import org.junit.Before;
 /**
  * Test Class for Class Calculator
  * 
@@ -11,16 +11,22 @@ import org.junit.Test;
  * @version 0.0.1
  */
 public class CalculatorTest {
-	Calculator testee;
+	Calculator tester;
 	
+	@Before
+	public void setUp() {
+		tester = new Calculator();
+	}
 	@Test
 	public void testSummeZweiPositiveIsOk() {
-		testee = new Calculator();
-		assertTrue(testee.summe(10, 25) == 35);
+		assertTrue(tester.summe(10, 25) == 35);
 	}
 	@Test
 	public void testSubstractionZweiPositiveIsOk() {
-		testee = new Calculator();
-		assertTrue(testee.substraktion(25, 10) == 15);
+		assertTrue(tester.substraktion(25, 10) == 15);
+	}
+	@Test
+	public void testDivisionZweiPositiveIsOk(){
+		assertTrue(tester.division(10, 10) == 1);
 	}
 }
