@@ -14,4 +14,7 @@ public class Calculator {
 	public int substraktion(int value1, int value2) {
 		return value1 - value2;
 	}
+	public int division(int v1, int v2) {
+		return v1 / v2;
+	}
 }
