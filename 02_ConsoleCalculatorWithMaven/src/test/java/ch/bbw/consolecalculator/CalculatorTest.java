@@ -2,6 +2,9 @@ package ch.bbw.consolecalculator;
 
 import static org.junit.Assert.*;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 import org.junit.Test;
 import org.junit.Before;
 /**
@@ -20,6 +23,22 @@ public class CalculatorTest {
 	@Test
 	public void testSummeZweiPositiveIsOk() {
 		assertTrue(tester.summe(10, 25) == 35);
+	}
+	@Test
+	public void testSummeZweiPositiveIsOkProtected() {
+		assertTrue(tester.summeProtected(10, 25) == 35);
+	}
+
+	@Test
+	public void testSummeZweiPositiveIsOkPackage() {
+		assertTrue(tester.summePackage(10, 25) == 35);
+	}
+
+	@Test
+	public void testSummeZweiPositiveIsOkPrivate() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+		Method method = Calculator.class.getDeclaredMethod("summePrivate", int.class, int.class);
+		method.setAccessible(true);
+		assertTrue((Integer) method.invoke(tester, 10, 25) == 35);
 	}
 	@Test
 	public void testSubstractionZweiPositiveIsOk() {
