@@ -29,4 +29,14 @@ public class CalculatorTest {
 	public void testDivisionZweiPositiveIsOk(){
 		assertTrue(tester.division(10, 10) == 1);
 	}
+	
+	@Test(expected = ArithmeticException.class)
+	public void testDivisionNull() {
+		assertTrue(tester.division(0, 0) == 0);
+	}
+	
+	@Test
+	public void testSummeUnexpectedException() {
+		assertTrue(tester.summe(10, 25) == 35);
+	}
 }
