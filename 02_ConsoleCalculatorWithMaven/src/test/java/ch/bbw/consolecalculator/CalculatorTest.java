@@ -21,32 +21,138 @@ public class CalculatorTest {
 		tester = new Calculator();
 	}
 	@Test
-	public void testSummeZweiPositiveIsOk() {
+	public void testSummeTwoPositiveIsOk() {
 		assertTrue(tester.summe(10, 25) == 35);
 	}
+
 	@Test
-	public void testSummeZweiPositiveIsOkProtected() {
+	public void testSummeOneNegativOnePositive() {
+		assertTrue(tester.summe((-10), 25) == 15);
+	}
+
+	@Test
+	public void testSummeTwoNegative() {
+		assertTrue(tester.summe((-10), (-25)) == -35);
+	}
+
+	@Test
+	public void testSummeZeroPlusZero() {
+		assertTrue(tester.summe(0, 0) == 0);
+	}
+
+	@Test
+	public void testSummeZeroWithPositive() {
+		assertTrue(tester.summe(0, 25) == 25);
+	}
+
+	@Test
+	public void testSummeMAX() {
+		assertTrue(tester.summe(Integer.MAX_VALUE, 25) == Integer.MAX_VALUE + 25);
+	}
+
+	@Test
+	public void testSummeMIN() {
+		assertTrue(tester.summe(Integer.MIN_VALUE, 25) == Integer.MIN_VALUE + 25);
+	}
+
+	@Test
+	public void testSummeMinAndMax() {
+		assertTrue(tester.summe(Integer.MAX_VALUE, Integer.MIN_VALUE) == Integer.MAX_VALUE + Integer.MIN_VALUE);
+	}
+	
+	@Test
+	public void testSummeTwoPositiveIsOkProtected() {
 		assertTrue(tester.summeProtected(10, 25) == 35);
 	}
 
 	@Test
-	public void testSummeZweiPositiveIsOkPackage() {
+	public void testSummeTwoPositiveIsOkPackage() {
 		assertTrue(tester.summePackage(10, 25) == 35);
 	}
 
 	@Test
-	public void testSummeZweiPositiveIsOkPrivate() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
+	public void testSummeTwoPositiveIsOkPrivate() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		Method method = Calculator.class.getDeclaredMethod("summePrivate", int.class, int.class);
 		method.setAccessible(true);
 		assertTrue((Integer) method.invoke(tester, 10, 25) == 35);
 	}
 	@Test
-	public void testSubstractionZweiPositiveIsOk() {
-		assertTrue(tester.substraktion(25, 10) == 15);
+	public void testSubstractionTwoPositiveIsOk() {
+		assertTrue(tester.substraction(25, 10) == 15);
+	}
+
+	@Test
+	public void testSubtraktionOneNegativOnePositive() {
+		assertTrue(tester.substraction((-10), 25) == -35);
+	}
+
+	@Test
+	public void testSubtraktionTwoNegative() {
+		assertTrue(tester.substraction((-10), (-25)) == 15);
+	}
+
+	@Test
+	public void testSubtraktionZeroMinusZero() {
+		assertTrue(tester.substraction(0, 0) == 0);
+	}
+
+	@Test
+	public void testSubtraktionZeroWithPositive() {
+		assertTrue(tester.substraction(0, 25) == -25);
+	}
+
+	@Test
+	public void testSubtraktionMAX() {
+		assertTrue(tester.substraction(Integer.MAX_VALUE, 25) == Integer.MAX_VALUE - 25);
+	}
+
+	@Test
+	public void testSubtraktionMIN() {
+		assertTrue(tester.substraction(Integer.MIN_VALUE, 25) == Integer.MIN_VALUE - 25);
+	}
+
+	@Test
+	public void testSubtraktionMinAndMax() {
+		assertTrue(tester.substraction(Integer.MAX_VALUE, Integer.MIN_VALUE) == Integer.MAX_VALUE - Integer.MIN_VALUE);
 	}
 	@Test
-	public void testDivisionZweiPositiveIsOk(){
-		assertTrue(tester.division(10, 10) == 1);
+	public void testDivisionTwoPositiveIsOk() {
+		assertTrue(tester.division(10, 2) == 5);
+	}
+
+	@Test
+	public void testDivisionOneNegativOnePositive() {
+		assertTrue(tester.division((-10), 2) == -5);
+	}
+
+	@Test
+	public void testDivisionTwoNegative() {
+		assertTrue(tester.division((-10), (-2)) == 5);
+	}
+
+	@Test
+	public void testDivisionZeroDividedZero() {
+		assertTrue(tester.division(0, 0) == 0);
+	}
+
+	@Test
+	public void testDivisionZeroWithPositive() {
+		assertTrue(tester.division(0, 25) == 0);
+	}
+
+	@Test
+	public void testDivisionMAX() {
+		assertTrue(tester.division(Integer.MAX_VALUE, 25) == Integer.MAX_VALUE / 25);
+	}
+
+	@Test
+	public void testDivisionMIN() {
+		assertTrue(tester.division(Integer.MIN_VALUE, 25) == Integer.MIN_VALUE / 25);
+	}
+
+	@Test
+	public void testDivisionMinAndMax() {
+		assertTrue(tester.division(Integer.MAX_VALUE, Integer.MIN_VALUE) == Integer.MAX_VALUE / Integer.MIN_VALUE);
 	}
 	
 	@Test(expected = ArithmeticException.class)
