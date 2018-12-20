@@ -82,37 +82,37 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testSubtraktionOneNegativOnePositive() {
+	public void testSubtractionOneNegativOnePositive() {
 		assertTrue(tester.substraction((-10), 25) == -35);
 	}
 
 	@Test
-	public void testSubtraktionTwoNegative() {
+	public void testSubtractionTwoNegative() {
 		assertTrue(tester.substraction((-10), (-25)) == 15);
 	}
 
 	@Test
-	public void testSubtraktionZeroMinusZero() {
+	public void testSubtractionZeroMinusZero() {
 		assertTrue(tester.substraction(0, 0) == 0);
 	}
 
 	@Test
-	public void testSubtraktionZeroWithPositive() {
+	public void testSubtractionZeroWithPositive() {
 		assertTrue(tester.substraction(0, 25) == -25);
 	}
 
 	@Test
-	public void testSubtraktionMAX() {
+	public void testSubtractionMAX() {
 		assertTrue(tester.substraction(Integer.MAX_VALUE, 25) == Integer.MAX_VALUE - 25);
 	}
 
 	@Test
-	public void testSubtraktionMIN() {
+	public void testSubtractionMIN() {
 		assertTrue(tester.substraction(Integer.MIN_VALUE, 25) == Integer.MIN_VALUE - 25);
 	}
 
 	@Test
-	public void testSubtraktionMinAndMax() {
+	public void testSubtractionMinAndMax() {
 		assertTrue(tester.substraction(Integer.MAX_VALUE, Integer.MIN_VALUE) == Integer.MAX_VALUE - Integer.MIN_VALUE);
 	}
 	@Test
@@ -130,7 +130,7 @@ public class CalculatorTest {
 		assertTrue(tester.division((-10), (-2)) == 5);
 	}
 
-	@Test
+	@Test(expected = ArithmeticException.class)
 	public void testDivisionZeroDividedZero() {
 		assertTrue(tester.division(0, 0) == 0);
 	}
