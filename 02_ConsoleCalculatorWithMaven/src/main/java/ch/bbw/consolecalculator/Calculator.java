@@ -17,6 +17,9 @@ public class Calculator {
 	public int division(int v1, int v2) throws ArithmeticException {
 		return v1 / v2;
 	}
+	public int multiplication(int value1, int value2) {
+		return value1 * value2;
+	}
 	protected int summeProtected(int v1, int v2) {
 		return v1 + v2;
 	}
