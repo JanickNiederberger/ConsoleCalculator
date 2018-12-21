@@ -23,7 +23,8 @@ public class Application {
 			System.out.println("1: Addition");
 			System.out.println("2: Subtraktion");
 			System.out.println("3: Division");
-			System.out.println("4: Beenden");
+			System.out.println("4: Multiplikation");
+			System.out.println("5: Beenden");
 			System.out.println("==================");
 			System.out.println("Wählen Sie eine Operation aus: ");
 			
@@ -61,6 +62,16 @@ public class Application {
 	            System.out.println("==================");
 	            break; 
 	        case 4:
+	        	System.out.println("Geben Sie die erste Zahl ein:"); 
+	            valueA = Integer.parseInt(in.nextLine());
+	            System.out.println("Geben Sie die zweite Zahl ein:"); 
+	            valueB = Integer.parseInt(in.nextLine());
+	            System.out.println("==================");
+	            System.out.println("Ergebnis " + valueA + " * " + 
+	    				valueB + " = " + calculator.multiplication(valueA, valueB));
+	            System.out.println("==================");
+	        	break;
+	        case 5:
 	        	System.exit(0);
 	        	break;
 	        default: 
@@ -68,7 +79,7 @@ public class Application {
 	            System.out.println("Geben Sie eine gültige Zahl ein"); 
 	            System.out.println("==================");
 	        } 
-		} while(choice!=4);
+		} while(choice!=5);
 
 	}
 }

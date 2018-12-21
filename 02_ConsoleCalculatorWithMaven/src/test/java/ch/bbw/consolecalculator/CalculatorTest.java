@@ -116,6 +116,45 @@ public class CalculatorTest {
 		assertTrue(tester.substraction(Integer.MAX_VALUE, Integer.MIN_VALUE) == Integer.MAX_VALUE - Integer.MIN_VALUE);
 	}
 	@Test
+	public void testMultiplicationTwoPositiveIsOk() {
+		assertTrue(tester.multiplication(10, 2) == 20);
+	}
+
+	@Test
+	public void testMultiplicationOneNegativOnePositive() {
+		assertTrue(tester.multiplication((-10), 2) == -20);
+	}
+
+	@Test
+	public void testMultiplicationTwoNegative() {
+		assertTrue(tester.multiplication((-10), (-2)) == 20);
+	}
+
+	@Test
+	public void testMultiplicationZeroMultipliedZero() {
+		assertTrue(tester.multiplication(0, 0) == 0);
+	}
+
+	@Test
+	public void testMultiplicationZeroWithPositive() {
+		assertTrue(tester.multiplication(0, 25) == 0);
+	}
+
+	@Test
+	public void testMultiplicationMAX() {
+		assertTrue(tester.multiplication(Integer.MAX_VALUE, 25) == Integer.MAX_VALUE * 25);
+	}
+
+	@Test
+	public void testMultiplicationMIN() {
+		assertTrue(tester.multiplication(Integer.MIN_VALUE, 25) == Integer.MIN_VALUE * 25);
+	}
+
+	@Test
+	public void testMultiplicationMinAndMax() {
+		assertTrue(tester.multiplication(Integer.MAX_VALUE, Integer.MIN_VALUE) == Integer.MAX_VALUE * Integer.MIN_VALUE);
+	}
+	@Test
 	public void testDivisionTwoPositiveIsOk() {
 		assertTrue(tester.division(10, 2) == 5);
 	}
