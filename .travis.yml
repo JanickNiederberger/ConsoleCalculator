@@ -14,6 +14,6 @@ deploy:
   provider: releases
   api_key:
     secure: m8QmVML5reJ7XsZxt5KCzsmd3CcoqmzWltid5AGZyLbUzd1hfKhwiGKDz3Bg2OeQcvgsVNEgaloGCcNcTUsi/OhN0cy8oYNknPFP2/Hhi58BGc+ltcWTDDS3y9yAhkJtWJbc2wDCNLpRdI1Df4rToD3ZaW3v0SzlfD3Ptqv+XtFrkUcUqop3fJ9YqARo59ic7vw5Ln0y/WvPQB8MuOdSPfkrcTCL++nG2rUYAWrc4m4d4GE6cUD3Vt6Fk3KmBN8f9tgtaK+XiKJ+okVtkBXMf/n9fS3A4NCTnmyTU5MpqkDlwcnEs3PYfEmqHY5O1/d3vX4dQRH/mT8DAUZYCRfduSDaBvR7mla9fQXh+aARfQXreFRtXOU514Pz3Z6xFxpQSZvA4VlctQmB8KeKQ3AFvmwQq7ZgYDy+Wmd/ubuamQYgnHIM9Gv01oXEhJNmo4Sr3ALX3NxJThcarQ3lrk3hE3KhrjxNXULYiAqttqlWcrPaSxpnHd8uE6XP6mFL2xnH9dPftmEJFObkcuChBEwmRzfAjy6ZIuRhkh/Q47CE7yj+2RMbEWCyzTUkVjh92KTwDT1f6Jmwi536lmVjm4BY146EeSs4gCq5Qj6lynu3JwvNgY+qOoJPCsbNUGmFoU4MHxbVnvESRmJl7DIoDSz43xUeqan0mMsKJUeExxwZ5tc=
-  file: "/home/travis/build/JanickNiederberger/ConsoleCalculator/02_ConsoleCalculatorWithMaven/target/02_ConsoleCalculatorWithMaven-0.0.1-SNAPSHOT.jar"
+  file: "/home/travis/.m2/repository/ch/bbw/02_ConsoleCalculatorWithMaven/0.0.1-SNAPSHOT/02_ConsoleCalculatorWithMaven-0.0.1-SNAPSHOT.jar"
   on:
     repo: JanickNiederberger/ConsoleCalculator
